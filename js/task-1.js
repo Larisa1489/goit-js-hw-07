@@ -1,10 +1,11 @@
-const galleryList = document.querySelectorAll('gallery');
-images.forEach(img => {
-  const listItem = document.createElement('li');
-  const imgElement = document.createElement('img');
-  imgElement.src = img.url;
-  imgElement.alt = img.alt;
-  listItem.appendChild(imgElement);
-  galleryList.appendChild(listItem);
-  console.log(galleryList);
+const categoriesList = document.querySelectorAll('ul#categories .item');
+
+console.log(`Number of categories: ${categoriesList.length}`);
+
+categoriesList.forEach(category => {
+  const categoryName = category.querySelector('h2').textContent;
+  const categoryItemsCount = category.querySelectorAll('ul li').length;
+
+  console.log(`Category: ${categoryName}`);
+  console.log(`Number of items: ${categoryItemsCount}`);
 });
